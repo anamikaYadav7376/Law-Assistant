@@ -300,36 +300,37 @@ Not found
 
 ---
 
-## 15. Clean Chat Interface Overview
+## 15. Application Screenshots & Live Interface
 
-The application is fully operational locally on `http://localhost:8501`, featuring a distraction-free chat interface with zero sidebar:
+The application is fully operational locally on `http://localhost:8502` / `http://localhost:8501`, featuring a high-contrast dark theme, a clean "Law Assistant" header card, and custom `👤` (User) and `⚖️` (Legal Assistant) avatars.
 
-```
-+---------------------------------------------------------------------------------------+
-|  DesignLaw AI                                                                         |
-|  Ask questions about industrial design registration in India                          |
-|  Answers are grounded strictly in the official Manual of Designs Practice & Procedure |
-|  -----------------------------------------------------------------------------------  |
-|                                                                                       |
-|  👤 User:                                                                             |
-|  What is the timeline for filing a reciprocity application claiming priority?         |
-|                                                                                       |
-|  🤖 Assistant:                                                                        |
-|  **Answer:** An application for registration of a design claiming priority under a   |
-|  reciprocity arrangement / Paris Convention / WTO must be filed within 6 months from  |
-|  the date of the earliest filing in the convention country or countries.              |
-|                                                                                       |
-|  **Source:** Chapter 16 – Timelines, PDF page 63.                                     |
-|                                                                                       |
-|  **Supporting text:** "Within 6 months from date of earliest filing in the            |
-|  country (s) under Paris convention/WTO."                                             |
-|                                                                                       |
-|  -----------------------------------------------------------------------------------  |
-|  [ 💬 Ask any question about industrial design registration...                      ] |
-+---------------------------------------------------------------------------------------+
-```
+### 1. Grounded Answer with Official Statutory Fees
+Demonstrates answering an in-scope question regarding the prescribed government fees for design registration, formatted with clear bullet points and accurate source citations:
+![Government Fee to Register Design](screenshots/fee_to_register_design.png)
 
-*(Note: The server-side API key is loaded privately via `.env` without any client-side exposure. You can capture and save authentic PNG screenshots directly by opening `http://localhost:8501` in your browser and saving them to the `screenshots/` directory).*
+---
+
+### 2. Classification System Inquiry
+Demonstrates citation of the Locarno Classification system as established under the Design Rules 2001 and 2008 amendment:
+![Locarno Classification System](screenshots/locarno_classification.png)
+
+---
+
+### 3. Copyright Term and Extension Guidelines
+Demonstrates retrieving and citing the exact 10-year term and 5-year extension provision directly from Chapter 6:
+![Copyright Duration and Extension](screenshots/copyright_duration.png)
+
+---
+
+### 4. Zero-Fabrication Guardrail: Out-of-Scope Trademark Query
+When asked about trademark registration fees (which are governed by the Trade Marks Act rather than the Designs manual), the application strictly returns `Not found` with zero hallucinations:
+![Trademark Fee Out of Scope - Not Found](screenshots/trademark_fee_not_found.png)
+
+---
+
+### 5. Zero-Fabrication Guardrail: Real-Time / Out-of-Scope Personnel Query
+When asked about current administrative personnel (e.g., current Controller General of Patents), the system verifies that the historical manual contains no real-time office-holder facts and returns `Not found`:
+![Controller General Out of Scope - Not Found](screenshots/controller_general_not_found.png)
 
 ---
 
