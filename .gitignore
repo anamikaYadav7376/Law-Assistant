@@ -1,0 +1,31 @@
+# Environment & Secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Vector Database & Persistent Storage
+chroma_db/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Node / Scratch files (if any)
+node_modules/
+npm-debug.log*
